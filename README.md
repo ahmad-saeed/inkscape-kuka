@@ -16,8 +16,8 @@ After a restart of Inkscape, the new extension will be available.
 
 ## Example: Converting Text to KRL
 
-![c:\Program Files\Inkscape\share\extensions](screenshots/1.png)
+![c:\Program Files\Inkscape\share\extensions](screenshots/1.png =669x)
 
-![c:\Program Files\Inkscape\share\extensions](screenshots/2.png)
+![c:\Program Files\Inkscape\share\extensions](screenshots/2.png =669x)
 
-![c:\Program Files\Inkscape\share\extensions](screenshots/3.png)
+![c:\Program Files\Inkscape\share\extensions](screenshots/3.png =669x)
