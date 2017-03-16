@@ -16,8 +16,8 @@ After a restart of Inkscape, the new extension will be available.
 
 ## Example: Converting Text to KRL
 
-![](./screenshots/1.png | width=669)
+![](./screenshots/1.png)
 
-![](./screenshots/2.png | width=669)
+![](./screenshots/2.png)
 
-![](./screenshots/3.png | width=669)
+![](./screenshots/3.png)
