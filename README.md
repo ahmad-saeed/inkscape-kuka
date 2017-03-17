@@ -80,10 +80,14 @@ Defines the desired TCP's Z-axis value when the TCP is jumping from a path to an
 ###   4.11. Approximation Value:
 
 ###   4.12. User Name:
+Defines the name of the user making this path. It'll be added as a comment in the code's header.
 
 ###   4.13. Directory:
+Defines the folder at which the output file will be located.
 
 ###   4.14. File Name:
+Defines the name of the output file. It should be ended with **.src**
 
 ###   4.15. Add numeric suffix to filename:
-
+Adds a number at the end of the file name to allow multiple files with the same name to be saved in the same directory.
+So for instance, if the file name is **output.src**, it will be saved like **output_0001.src**
