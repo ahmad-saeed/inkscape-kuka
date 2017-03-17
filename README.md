@@ -35,7 +35,7 @@ After that the KRL Code will be stored and the motion path will be outlined.
 
 ## 4. User Guide to extension settings
 ###   4.1. Tool:
-Under most circumstances, a Kuka user first defines the TOOL and the BASE then refers to them in KRL using $TOOL, and $BASE system variables.
+Under most circumstances, a KUKA user first defines the TOOL and the BASE then refers to them in KRL using $TOOL, and $BASE system variables.
 The Tool can be defined through one of these two main procedures:
 * Automatically be calling the data variables created after performing any of the tool calibration processes from `Start-up -> Calibrate -> Tool`.
 **Example:** `$TOOL = TOOL_DATA[1]`  where 1 is the saved tool number.
@@ -63,31 +63,46 @@ Defines the velocity at which the robot's TCP is moving while jumping from a pat
 ###   4.5. Coordinate System:
 Defines the desired Base number. The idea behind this is typically similar to the *Tool* in section *4.1.*
 
-###   4.6. Origin X Offset:
-Defines the shift from the selected base origin along the X-axis. It is expressed in millimeters. 
+###   4.6. Origin X, and Y Offset:
+Defines the shift from the selected base origin along the x-axis and y-axis. It is expressed in millimeters. 
 
-###   4.7. Origin Y Offset:
-Defines the shift from the selected base origin along the Y-axis. It is expressed in millimeters. 
-
-###   4.8. Work Z-Depth:
+###   4.7. Work Z-Depth:
 Defines the desired TCP's Z-axis value when the TCP is moving according to the desired path. It is expressed in millimeters.
 
-###   4.9. Travel Z-Height:
+###   4.8. Travel Z-Height:
 Defines the desired TCP's Z-axis value when the TCP is jumping from a path to another. It is expressed in millimeters.
 
-###   4.10. Approximation Type:
+###   4.9. Approximation Type:
+In order to increase velocity, avoid jerky motion, and achieve continuous motion along complex paths, points for which exact positioning is not necessary can be approximated. The robot takes a shortcut as illustrated below. 
+![](./screenshots/approximation.png)
+The various approximation motions are:
+* Distance:
+A translational distance can be assigned to the variable **$APO.CDIS**. If the approximate positioning is triggered by this variable, the controller leaves the individual block contour, at the earliest, when the distance from the end point falls below the value in **$APO.CDIS**. 
+Its value is expressed in millimeters.
+* Velocity: 
+A percentage value can be assigned to the variable **$APO.CVEL**. This value specifies the percentage of the programmed velocity ($VEL) at which the approximate positioning process is started, at the earliest, in the deceleration phase of the individual block. The component which, during the motion, reaches or comes closest to the programmed velocity value, is then evaluated in terms of translation, swivel and rotation.
+Its value is expressed in integer number percentage.
+* Orientation:
+An orientation distance can be assigned to the variable **$APO.CORI**. In this case, the individual block contour is left, at the earliest, when the dominant orientation angle (swiveling or rotation of the longitudinal tool axis) falls below the angle distance, defined in **$APO.CORI**, from the programmed approximate positioning point. 
+Its value is expressed in degrees.
 
-###   4.11. Approximation Value:
+###   4.10. Approximation Value:
+Defines the value of the selected approximation type. The greater the value of approximation, the more the path is rounded. You can get fine results by setting the its value to **0.5** for **Distance** type approximation.
 
-###   4.12. User Name:
+###   4.11. User Name:
 Defines the name of the user making this path. It'll be added as a comment in the code's header.
 
-###   4.13. Directory:
+###   4.12. Directory:
 Defines the folder at which the output file will be located.
 
-###   4.14. File Name:
+###   4.13. File Name:
 Defines the name of the output file. It should be ended with **.src**
 
-###   4.15. Add numeric suffix to filename:
+###   4.14. Add numeric suffix to filename:
 Adds a number at the end of the file name to allow multiple files with the same name to be saved in the same directory.
 So for instance, if the file name is **output.src**, it will be saved like **output_0001.src**
+
+
+## 5. Resources
+* http://javakuka.com/xyzabc/ 
+* KST Expert Programming Manual KSS 5.2
