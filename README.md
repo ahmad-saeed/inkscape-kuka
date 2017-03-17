@@ -18,13 +18,13 @@ After a restart of Inkscape, the new extension will be available.
 1. Write your text with the text tool. The bottom left corner is the 0,0 location of the defined base or offset.
 2. Mark and position your text. If you have more objects (lines, circles, …) to embed in your G-Code, you have to mark them all. 
 
-...Only marked objects will be used to generate the KRL Code.
+⋅⋅⋅Only marked objects will be used to generate the KRL Code.
 
 ![](./screenshots/1.png)
 
 3. Click `Path -> Object` to Path or press `Shift + Ctrl + C` to convert the text into a path. 
 
-...The Plugin will use this path to generate the KRL Code.
+⋅⋅⋅The Plugin will use this path to generate the KRL Code.
 
 ![](./screenshots/2.png)
 
