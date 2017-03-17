@@ -75,15 +75,16 @@ Defines the desired TCP's Z-axis value when the TCP is jumping from a path to an
 ###   4.9. Approximation Type:
 In order to increase velocity, avoid jerky motion, and achieve continuous motion along complex paths, points for which exact positioning is not necessary can be approximated. The robot takes a shortcut as illustrated below. 
 ![](./screenshots/approximation.png)
+
 The various approximation motions are:
-* Distance:
-A translational distance can be assigned to the variable **$APO.CDIS**. If the approximate positioning is triggered by this variable, the controller leaves the individual block contour, at the earliest, when the distance from the end point falls below the value in **$APO.CDIS**. 
+* **Distance:**
+A translational distance can be assigned to the variable `$APO.CDIS`. If the approximate positioning is triggered by this variable, the controller leaves the individual block contour, at the earliest, when the distance from the end point falls below the value in `$APO.CDIS`. 
 Its value is expressed in millimeters.
-* Velocity: 
-A percentage value can be assigned to the variable **$APO.CVEL**. This value specifies the percentage of the programmed velocity ($VEL) at which the approximate positioning process is started, at the earliest, in the deceleration phase of the individual block. The component which, during the motion, reaches or comes closest to the programmed velocity value, is then evaluated in terms of translation, swivel and rotation.
+* **Velocity:** 
+A percentage value can be assigned to the variable `$APO.CVEL`. This value specifies the percentage of the programmed velocity `$VEL` at which the approximate positioning process is started, at the earliest, in the deceleration phase of the individual block. The component which, during the motion, reaches or comes closest to the programmed velocity value, is then evaluated in terms of translation, swivel and rotation.
 Its value is expressed in integer number percentage.
-* Orientation:
-An orientation distance can be assigned to the variable **$APO.CORI**. In this case, the individual block contour is left, at the earliest, when the dominant orientation angle (swiveling or rotation of the longitudinal tool axis) falls below the angle distance, defined in **$APO.CORI**, from the programmed approximate positioning point. 
+* **Orientation:**
+An orientation distance can be assigned to the variable `$APO.CORI`. In this case, the individual block contour is left, at the earliest, when the dominant orientation angle (swiveling or rotation of the longitudinal tool axis) falls below the angle distance, defined in `$APO.CORI`, from the programmed approximate positioning point. 
 Its value is expressed in degrees.
 
 ###   4.10. Approximation Value:
@@ -104,5 +105,6 @@ So for instance, if the file name is **output.src**, it will be saved like **out
 
 
 ## 5. Resources
+* https://www.repetier.com/repetier-g-code-plugin-for-inskscape/
 * http://javakuka.com/xyzabc/ 
 * KST Expert Programming Manual KSS 5.2
