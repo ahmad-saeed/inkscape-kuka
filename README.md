@@ -37,18 +37,53 @@ After that the KRL Code will be stored and the motion path will be outlined.
 ###   4.1. Tool:
 Under most circumstances, a Kuka user first defines the TOOL and the BASE then refers to them in KRL using $TOOL, and $BASE system variables.
 The Tool can be defined through one of these two main procedures:
-* Automatically be calling the data variables created after performing any of the tool calibration processes from `Start-up > Calibrate > Tool`.
-Example: `$TOOL = TOOL_DATA[1]`  where 1 is the saved tool number.
+* Automatically be calling the data variables created after performing any of the tool calibration processes from `Start-up -> Calibrate -> Tool`.
+**Example:** `$TOOL = TOOL_DATA[1]`  where 1 is the saved tool number.
 * Manually by entering their numeric XYZABC offset and orientation values.
-Example: `$TOOL = {X 280, Y 0, Z -10, A 30, B 90, C 0}` where XYZ is the translational offset, and the ABC are Euler angles between the new base and the FLANGE coordinate system.
+**Example:** `$TOOL = {X 280, Y 0, Z -10, A 30, B 90, C 0}` where XYZ is the translational offset, and the ABC are Euler angles between the new base and the FLANGE coordinate system.
 
 For this extension, you can only choose the tool number that matches yours, but if you desire to write the values manually, you can edit the created SRC file and add your values.
 
 ###   4.2. A° B° C° Orientation Angles (Euler Angles):
-For this extension, A, B, and C represents the relative orientation of the selected tool relative to the selected base in certain motion path. 
-Example: `LIN {X 0, Y 0, Z 0, A 90, B 180, C 0}`
+Defines the relative orientation of the selected tool relative to the selected base in certain motion path. 
+**Example:** `LIN {X 0, Y 0, Z 0, A 90, B 180, C 0}`
 
 This transformation can be performed by:
 * Rotating the tool about its z-axis with an angle A (90 degrees)
 * Rotating the tool about its y-axis with an angle B (180 degrees)
+
 Note that the ABC angles are the same as Euler angles, but with a little bit different names, as the rotation about tool’s z-axis is named C in Euler’s.
+
+###   4.3. Work Speed (Feedrate):
+Defines the velocity at which the robot's TCP is moving while moving according to the desired path. It is expressed in units of Meter Per Second.
+
+###   4.4. Travel Speed:
+Defines the velocity at which the robot's TCP is moving while jumping from a path to another. It is also expressed in units of Meter Per Second.
+
+###   4.5. Coordinate System:
+Defines the desired Base number. The idea behind this is typically similar to the *Tool* in section *4.1.*
+
+###   4.6. Origin X Offset:
+Defines the shift from the selected base origin along the X-axis. It is expressed in millimeters. 
+
+###   4.7. Origin Y Offset:
+Defines the shift from the selected base origin along the Y-axis. It is expressed in millimeters. 
+
+###   4.8. Work Z-Depth:
+Defines the desired TCP's Z-axis value when the TCP is moving according to the desired path. It is expressed in millimeters.
+
+###   4.9. Travel Z-Height:
+Defines the desired TCP's Z-axis value when the TCP is jumping from a path to another. It is expressed in millimeters.
+
+###   4.10. Approximation Type:
+
+###   4.11. Approximation Value:
+
+###   4.12. User Name:
+
+###   4.13. Directory:
+
+###   4.14. File Name:
+
+###   4.15. Add numeric suffix to filename:
+
