@@ -2,6 +2,7 @@
 
 ## 1. Description
 An Inkscape extension, used to convert the contours of text and images in Inkscape to KRL Code to be used with KUKA KR C4 controllers.
+This work is based on the extension "Repetier G-Code Plugin for Inskscape". Please, refere to **Resources** section.
 
 
 ## 2. Adding the extension to Inkscape
