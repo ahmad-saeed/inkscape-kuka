@@ -2428,8 +2428,7 @@ class laser_gcode(inkex.Effect):
         if (self.options.approx == 'C_VEL'): f.write("$APO.CVEL=" + str(self.options.approxval) + "\n" )
         if (self.options.approx == 'C_ORI'): f.write("$APO.CORI=" + str(self.options.approxval) + "\n" )
         f.write("$OV_PRO=50\n")
-        #f.write("PTP {A1 0,A2 -90,A3 90,A4 0,A5 0,A6 0}\n")
-		f.write("PTP $POS_ACT\n") # faster BCO
+        f.write("PTP {A1 0,A2 -90,A3 90,A4 0,A5 0,A6 0}\n")
         f.write("$OV_PRO=100\n")
         f.write("$VEL.CP=" + str(round(self.options.travel_speed,3)) +"\n" )
         f.write("PTP {X 0,Y 0,Z " + str(self.options.travel_depth) + ",A "+ str(self.options.oria) + ",B " + str(self.options.orib) + ",C "+ str(self.options.oric) +"}\n" )
