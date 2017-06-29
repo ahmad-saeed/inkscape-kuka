@@ -1,4 +1,4 @@
-# inkscape-path-to-krl-exporter
+# Inkscape KRL Export
 
 ## 1. Description
 An Inkscape extension, used to convert the contours of text and images in Inkscape to KRL Code to be used with KUKA KR C4 controllers.
